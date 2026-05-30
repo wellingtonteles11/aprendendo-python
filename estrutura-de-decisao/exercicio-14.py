@@ -10,4 +10,41 @@
 # O algoritmo deve mostrar na tela as notas, a média, o conceito correspondente e a mensagem “APROVADO” se o conceito for A, B ou C ou “REPROVADO” se o conceito for D ou E.
 
 try:
-    primeira_nota = 
+    primeira_nota = float(input('Digite a primeira nota: '))
+    segunda_nota = float(input('Digite a segunda nota: '))
+
+    media = (primeira_nota + segunda_nota) / 2
+
+    print(f'Primeira nota: {primeira_nota:.1f}')
+    print(f'Segunda nota: {segunda_nota:.1f}')
+    print(f'Média: {media:.1f}')
+
+    if 9 <= media <= 10:
+        conceito = 'A'
+        situacao = 'Aprovado'
+
+    elif 7.5 <= media < 9:
+        conceito = 'B'
+        situacao = 'Aprovado'
+
+    elif 6 <= media < 7.5:
+        conceito = 'C'
+        situacao = 'Aprovado'
+
+    elif 4 <= media < 6:
+        conceito = 'D'
+        situacao = 'Reprovado'
+
+    elif 0<= media < 4:
+        conceito = 'E'
+        situacao = 'Reprovado'
+
+    else:
+        conceito = 'Conceito inválido'
+        situacao = 'Situação inválida'
+
+    print(f'Conceito: {conceito}')
+    print(f'Situaçao: {situacao}')
+
+except ValueError:
+    print('Digite apenas números válidos.')
